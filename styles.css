@@ -1,129 +1,197 @@
+/* Enables smooth scrolling behavior when clicking on anchor links throughout the entire webpage */
 html {
     scroll-behavior: smooth;
 }
 
+/* Removes default body margin and sets the default font for all text to Arial, with sans-serif as fallback */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-
+/* Styles the main header section of the webpage */
 header {
+    /* Sets a background image for the header and configures how it should be displayed */
     background-image: url('/imgs/thisiswastingtime.jpeg');
+    /* Makes the background image cover the entire header area while maintaining aspect ratio */
     background-size: cover;
+    /* Centers the background image within the header */
     background-position: center;
+    /* Sets text color to white for all content within the header */
     color: white;
+    /* Centers all text content within the header */
     text-align: center;
+    /* Sets the minimum height of the header to 92% of the viewport height */
     min-height: 92vh;
+    /* Enables absolute positioning for child elements within the header */
     position: relative;
+    /* Sets up flexbox layout for header content */
     display: flex;
+    /* Arranges flex items vertically */
     flex-direction: column;
 }
 
+/* Styles the container for header content */
 .header-content {
+    /* Enables flexbox layout for this container */
     display: flex;
+    /* Arranges items vertically */
     flex-direction: column;
+    /* Centers items vertically */
     justify-content: center;
+    /* Centers items horizontally */
     align-items: center;
+    /* Allows this container to take up remaining space */
     flex-grow: 1;
+    /* Adds padding around the content */
     padding: 2rem;
+    /* Ensures content appears above other elements */
     z-index: 1;
 }
 
+/* Styles the main heading in the header */
 header h1 {
+    /* Sets the font family to Poppins with sans-serif fallback */
     font-family: 'Poppins', sans-serif;
+    /* Sets font size to 3.5 times the root element's font size */
     font-size: 3.5rem;
-    font-weight: 325;  /* Light weight for that elegant look */
+    /* Sets the font weight to slightly lighter than normal */
+    font-weight: 325;
+    /* Removes default margin */
     margin: 0;
+    /* Sets text color to a beige shade */
     color: #F5F5DC;
+    /* Makes the element a block-level element */
     display: block;
-    letter-spacing: 0.02em;  /* Slight letter spacing for better readability */
+    /* Adds slight spacing between letters */
+    letter-spacing: 0.02em;
 }
 
+/* Styles paragraphs within the header */
 header p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
-    font-weight: 200;  /* Light weight to match the heading */
+    font-weight: 200;
     margin-top: 0rem;
     color: #F5F5DC;
     display: block;
     letter-spacing: 0.01em;
 }
 
+/* Styles the container for the call-to-action bubble */
 .bubble-container {
-    margin-top: 2rem; /* Adjust this to move the bubble vertically (higher/lower). */
-    margin-bottom: 1rem; /* Add space below the bubble, if needed. */
+    /* Adds space above the container */
+    margin-top: 2rem;
+    /* Adds space below the container */
+    margin-bottom: 1rem;
+    /* Enables flexbox layout */
     display: flex;
-    justify-content: center; /* Aligns the button horizontally. Options: 'flex-start', 'flex-end', or 'center'. */
+    /* Centers the bubble horizontally */
+    justify-content: center;
 }
 
+/* Styles the call-to-action button */
 .cta-bubble {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
     color: #11191f;
+    /* Sets button background color to beige */
     background-color: #F5F5DC;
+    /* Removes underline from link */
     text-decoration: none;
+    /* Adds padding inside the button */
     padding: 0.8rem 2rem;
+    /* Creates rounded corners */
     border-radius: 2rem;
+    /* Adds a subtle shadow effect */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Makes all transitions smooth over 0.3 seconds */
     transition: all 0.3s ease;
 }
 
+/* Styles for when hovering over the call-to-action button */
 .cta-bubble:hover {
+    /* Changes background color to white on hover */
     background-color: #ffffff;
+    /* Slightly moves the button up */
     transform: translateY(-2px);
+    /* Makes the shadow larger and more prominent */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Styles the benefits section grid layout */
 .benefits {
+    /* Creates a grid layout */
     display: grid;
+    /* Makes columns responsive, with minimum width of 300px */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Sets gap between grid items */
     gap: 30px;
+    /* Centers the grid and adds margin */
     margin: 2rem auto;
+    /* Sets maximum width of the grid */
     max-width: 1200px;
- }
- 
- .benefit-item {
-    padding: 1.5rem;  /* Reduced padding for tighter fit */
+}
+
+/* Styles individual benefit items */
+.benefit-item {
+    /* Adds padding inside each item */
+    padding: 1.5rem;
+    /* Sets light gray background */
     background: #f5f5f5;
+    /* Rounds the corners */
     border-radius: 8px;
+    /* Aligns text to the left */
     text-align: left;
-    transition: transform 0.3s ease;  /* Keep transition for hover effect */
-    height: 100%;  /* Make all boxes same height */
+    /* Adds smooth transition for transform effects */
+    transition: transform 0.3s ease;
+    /* Makes items take full height of their grid cell */
+    height: 100%;
+    /* Sets up flexbox layout */
     display: flex;
+    /* Arranges content vertically */
     flex-direction: column;
- }
- 
- .benefit-item:hover {
-    transform: translateY(-5px);  /* Keep the hover effect */
- }
- 
- .benefit-item h3 {
+}
+
+/* Adds hover effect to benefit items */
+.benefit-item:hover {
+    /* Moves item up slightly when hovered */
+    transform: translateY(-5px);
+}
+
+/* Styles headings within benefit items */
+.benefit-item h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     color: #11191f;
-    margin-bottom: 0.75rem;  /* Reduced margin for tighter spacing */
+    margin-bottom: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.01em;
- }
- 
- .benefit-item p {
+}
+
+/* Styles paragraphs within benefit items */
+.benefit-item p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     color: #11191f;
-    line-height: 1.4;  /* Slightly reduced line height */
+    /* Sets line height for better readability */
+    line-height: 1.4;
     font-weight: 300;
-    margin: 0;  /* Remove default margins */
- }
- 
-.cta-section {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: -0.5rem;
-    
+    margin: 0;
 }
 
+/* Styles the call-to-action section */
+.cta-section {
+    /* Centers all text */
+    text-align: center;
+    /* Adds padding above and below */
+    padding: 2rem 0;
+    /* Moves section up slightly */
+    margin-top: -0.5rem;
+}
+
+/* Styles headings in the call-to-action section */
 .cta-section h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
@@ -133,6 +201,7 @@ header p {
     letter-spacing: 0.02em;
 }
 
+/* Styles paragraphs in the call-to-action section */
 .cta-section p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
@@ -141,147 +210,75 @@ header p {
     line-height: 1.6;
 }
 
+/* Styles the navigation bar */
 nav {
+    /* Positions nav absolutely within the header */
     position: absolute;
+    /* Sets distance from top */
     top: 2rem;
+    /* Sets distance from right */
     right: 2rem;
+    /* Sets distance from left */
     left: 2rem;
+    /* Enables flexbox layout */
     display: flex;
+    /* Spreads items to opposite ends */
     justify-content: space-between;
-    align-items: flex-start; /* Changed from center to flex-start */
+    /* Aligns items to the top */
+    align-items: flex-start;
+    /* Ensures nav appears above other elements */
     z-index: 2;
 }
 
-nav a {
-    text-decoration: none; /* Controls underline (remove or add). */
-    color: #11191f; /* Text color of the links. Change to your preferred color. */
-    font-family: 'Poppins', sans-serif; /* Font family for the links. */
-    font-size: 1rem; /* Font size for the links. Adjust as needed. */
-    font-weight: bold; /* Font weight (e.g., normal, bold, 300, 600). */
-    transition: color 0.3s ease; /* Smooth color transition on hover. */
-}
-
-nav a:hover {
-    color: #F5F5DC; /* Change color when hovered. Customize this. */
-}
-
-
-.welcome-section {
-    background-color: #c4c3c3;  /* Light gray background */
-    padding: 0.7rem 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.welcome-section h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.9rem;
-    color: #11191f;
-    margin-bottom: 1.5rem;
-}
-
-.welcome-section p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: #11191f;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.form-section {
-    background-color: #11191f;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-    margin-top: -2rem;
-    margin-bottom: -7rem; /* This is controlling the space below the form */
-}
-
-
-.form-container {
-    max-width: 800px;
-    margin: -1.5rem auto 0;
-}
-
-.form-section input,
-.form-section textarea {
-    background-color: #1E2022 !important;
-    border: 1px solid #2C2F33 !important;
-    color: #F5F5DC !important;
-    font-family: 'Poppins', sans-serif;
-}
-
-.form-section input:focus,
-.form-section textarea:focus {
-    border-color: #F5F5DC !important;
-    box-shadow: none !important;
-}
-
-.form-section input::placeholder,
-.form-section textarea::placeholder {
-    color: #808080 !important;
-}
-
-.contact-heading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.9rem;  /* Matching your welcome section h2 size */
-    font-weight: 325;
-    color: #F5F5DC;
-    margin-bottom: 2rem;
-    letter-spacing: 0.02em;
-}
-
-.form-section label {
-    color: #F5F5DC;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-.form-section label > span,
-.form-section label::after {
-    color: #ff4444 !important;
-}
-
-nav {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    left: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-}
-
+/* Styles the logo container */
 .logo {
-    display: flex;
-    align-items: center;
+    /* Fixed size - won't scale */
+    width: 300px;     /* Fixed width in pixels */
+    height: 300px;    /* Fixed height in pixels */
+    position: relative;  /* Stays in place regardless of scroll */
+    
+    /* Positioning options - try adjusting these values */
+    top: -30px;
+    left: 85px;
+    
+    /* If you were using transform, you can remove it */
+    /* transform: translate(50px, -50px); */
 }
-
 
 .logo img {
-    height: 320px; /* Adjust this value to your preferred logo size */
-    width: auto;
-    display: block;
-    position: absolute; /* Add this */
-    top: -6.585rem; /* Adjust this value to position the logo vertically */
-    left: -3rem;
+    position: absolute;
+    width: 300px;    /* Fixed width matching container */
+    height: 300px;   /* Fixed height matching container */
+    object-fit: contain;
+    top: -4rem;
+    left: -9.5rem;
 }
 
 
+/* Styles the navigation links container */
+/* Original nav-links styles remain the same */
+/* Navigation Links Container */
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.1);
     padding: 0.5rem 2rem;
     border-radius: 8px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    flex-direction: row;
+    position: relative;
+    z-index: 3;
+    text-align: center;
 }
 
-/* Move your existing nav a styles to target .nav-links a instead */
+.nav-links:hover {
+    background: #11191f;
+}
+
+/* Individual Navigation Links */
 .nav-links a {
     text-decoration: none;
     color: #11191f;
@@ -289,64 +286,240 @@ nav {
     font-size: 1rem;
     font-weight: bold;
     transition: color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: visible; /* Allows text to extend beyond container */
+    width: auto; /* Lets the text determine the width */
 }
 
-.nav-links a:hover {
+.nav-links:hover a {
     color: #F5F5DC;
 }
 
-/* Form grid styles */
+/* Responsive Breakpoints */
+@media screen and (max-width: 1400px) {
+    .nav-links a {
+        white-space: normal; /* Allow wrapping on smaller screens */
+        max-width: 250px;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.8rem;
+        margin-right: 1rem;
+    }
+    
+    .nav-links a {
+        max-width: 180px;
+        padding: 0.3rem 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .nav-links {
+        margin-right: 0.5rem;
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .nav-links a {
+        max-width: 120px;
+        line-height: 1.2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 1rem;
+        margin-right: 0.3rem;
+    }
+    
+    .nav-links a {
+        max-width: 80px;
+        font-size: 0.9rem;
+        padding: 0.2rem 0;
+    }
+}
+
+/* Styles the welcome section */
+.welcome-section {
+    /* Sets light gray background */
+    background-color: #c4c3c3;
+    /* Adds padding */
+    padding: 0.7rem 2rem;
+    /* Centers text */
+    text-align: center;
+    /* Adds space below */
+    margin-bottom: 1rem;
+}
+
+/* Styles welcome section headings */
+.welcome-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    color: #11191f;
+    margin-bottom: 1.5rem;
+}
+
+/* Styles welcome section paragraphs */
+.welcome-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #11191f;
+    /* Limits text width */
+    max-width: 800px;
+    /* Centers the paragraph */
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Styles the form section */
+.form-section {
+    /* Sets dark background */
+    background-color: #11191f;
+    /* Sets text color to white */
+    color: white;
+    /* Adds padding */
+    padding: 4rem 2rem;
+    /* Centers text */
+    text-align: center;
+    /* Adjusts vertical positioning */
+    margin-top: -2rem;
+    margin-bottom: -7rem;
+}
+
+/* Styles the form container */
+.form-container {
+    /* Sets maximum width */
+    max-width: 800px;
+    /* Centers the form and adjusts margin */
+    margin: -1.5rem auto 0;
+}
+
+/* Styles form inputs and textareas */
+.form-section input,
+.form-section textarea {
+    /* Sets dark background for form fields */
+    background-color: #1E2022 !important;
+    /* Adds border to form fields */
+    border: 1px solid #2C2F33 !important;
+    /* Sets text color */
+    color: #F5F5DC !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styles form fields when focused */
+.form-section input:focus,
+.form-section textarea:focus {
+    /* Changes border color when focused */
+    border-color: #F5F5DC !important;
+    /* Removes default focus shadow */
+    box-shadow: none !important;
+}
+
+/* Styles placeholder text in form fields */
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+    /* Sets placeholder text color */
+    color: #808080 !important;
+}
+
+/* Styles the contact form heading */
+.contact-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 325;
+    color: #F5F5DC;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+/* Styles form labels */
+.form-section label {
+    color: #F5F5DC;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Styles required field indicators */
+.form-section label > span,
+.form-section label::after {
+    /* Sets color for required field asterisks */
+    color: #ff4444 !important;
+}
+
+/* Sets up form grid layout */
+/* Form grid layout */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
+/* Form rows */
 .form-row {
     display: grid;
     gap: 1rem;
 }
 
+/* Two-column layout for specific rows */
+.form-row.two-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Form groups */
 .form-group {
     margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
+/* Responsive design */
+@media (max-width: 600px) {
     .form-row.two-cols {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 
+/* Styles the scroll arrow */
 .scroll-arrow {
+    /* Positions arrow absolutely */
     position: absolute;
+    /* Places arrow 10% from bottom */
     bottom: 10%;
+    /* Centers arrow horizontally */
     left: 50%;
+    /* Adjusts horizontal centering */
     transform: translateX(-50%);
+    /* Ensures arrow appears above other elements */
     z-index: 2;
 }
 
+/* Styles scroll arrow link */
 .scroll-arrow a {
+    /* Sets arrow color */
     color: #F5F5DC;
+    /* Adds smooth transition */
     transition: all 0.3s ease;
+    /* Sets up flexbox layout */
     display: flex;
+    /* Arranges items vertically */
     flex-direction: column;
+    /* Centers items horizontally */
     align-items: center;
+    /* Applies floating animation */
     animation: float 2s ease-in-out infinite;
 }
 
+/* Styles scroll arrow on hover */
 .scroll-arrow a:hover {
+    /* Changes color to white */
     color: #ffffff;
-    transform: translateY(5px);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
