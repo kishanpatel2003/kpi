@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KP Investments - Buyer Network</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/imgs/newlogo.png" alt="KP Investments Logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Interested in Selling?</a>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>KP Investments</h1>
+            <p>Join Our Exclusive Buyer Network</p>
+            <div class="bubble-container">
+                <a href="#form-section" class="cta-bubble">Get Started</a>
+            </div>
+        </div>
+        <div class="scroll-arrow">
+            <a href="#welcome-section">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13l5 5 5-5"/>
+                    <path d="M7 6l5 5 5-5"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <section class="welcome-section">
+        <section id="welcome-section" class="welcome-section"></section>
+        <h2>Access Exclusive Off-Market Deals</h2>
+        
+        <p class="intro">
+            Join our network of qualified cash buyers and get first access to our curated selection of investment opportunities in New Jersey. Our process ensures you see only the deals that match your criteria:
+        </p>
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <h3>Pre-Screened Opportunities</h3>
+                <p>We thoroughly evaluate each property to ensure it meets our strict investment criteria before presenting it to our network.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Direct Deal Access</h3>
+                <p>Get notified immediately when properties matching your investment criteria become available.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Streamlined Process</h3>
+                <p>Our experienced team handles the details, making your investment process smooth and efficient.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Ready to Join Our Buyer Network?</h3>
+            <p>Fill out the form below to start receiving exclusive deal opportunities.</p>
+        </div>
+    </section>
+    
+    <section id="form-section" class="form-section">
+        <div class="form-container">
+            <h3 class="contact-heading">Join Our Buyer Network</h3>
+            <form id="contact-form" class="form-grid">
+                <!-- Name row -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="first-name">First Name <span>*</span></label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Your First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name <span>*</span></label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Your Last Name" required>
+                    </div>
+                </div>
+                
+                <!-- Contact row -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span>*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                </div>
+                
+                <!-- Message row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="message">Investment criteria</label>
+                        <textarea id="message" name="message" placeholder="What type of property are you looking for? (types, locations, price range, etc. The more detail, the more we can help!)"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" id="submit-button">Submit</button>
+                <div id="form-status" style="display: none; margin-top: 1rem;"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="container">
+        <small>© 2025 KP Investments Group LLC</small>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const formStatus = document.getElementById('form-status');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Sending your message...';
+            formStatus.style.color = 'blue';
+            
+            const formData = {
+    type: 'BUYER',  
+    first_name: document.getElementById('first-name').value,
+    last_name: document.getElementById('last-name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    property_address: '',  // Add this empty property for consistency
+    message: document.getElementById('message').value  // Keep this separate from type
+};
+            
+            try {
+                console.log('Sending data:', formData);
+                
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxFONzAC_Upm1Jtl2wgKxZ5VYDTeeOwo0Gy4XuHVhxWDpj5GQbD5BQqgSxp_KwUnzkQgg/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'no-cors'
+                });
+                
+                formStatus.textContent = 'Thank you! Your submission has been received. We will review your criteria and be in touch within 48 hours.';
+                formStatus.style.color = 'green';
+                form.reset();
+                
+            } catch (error) {
+                console.error('Error:', error);
+                formStatus.textContent = 'Sorry, there was an error submitting your form. Please try again. Error: ' + error.message;
+                formStatus.style.color = 'red';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit';
+            }
+        });
+    });
+    </script>
+</body>
+</html>

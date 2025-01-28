@@ -1,0 +1,347 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-image: url('/imgs/thisiswastingtime.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    min-height: 92vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 325;  /* Light weight for that elegant look */
+    margin: 0;
+    color: #F5F5DC;
+    display: block;
+    letter-spacing: 0.02em;  /* Slight letter spacing for better readability */
+}
+
+header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;  /* Light weight to match the heading */
+    margin-top: 0rem;
+    color: #F5F5DC;
+    display: block;
+    letter-spacing: 0.01em;
+}
+
+.bubble-container {
+    margin-top: 2rem; /* Adjust this to move the bubble vertically (higher/lower). */
+    margin-bottom: 1rem; /* Add space below the bubble, if needed. */
+    display: flex;
+    justify-content: center; /* Aligns the button horizontally. Options: 'flex-start', 'flex-end', or 'center'. */
+}
+
+.cta-bubble {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #11191f;
+    background-color: #F5F5DC;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cta-bubble:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.benefit-item {
+    padding: 2rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #11191f;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.benefit-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #11191f;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.cta-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #11191f;
+    margin-bottom: 1rem;
+    font-weight: 325;
+    letter-spacing: 0.02em;
+}
+
+.cta-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #11191f;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Changed from center to flex-start */
+    z-index: 2;
+}
+
+nav a {
+    text-decoration: none; /* Controls underline (remove or add). */
+    color: #11191f; /* Text color of the links. Change to your preferred color. */
+    font-family: 'Poppins', sans-serif; /* Font family for the links. */
+    font-size: 1rem; /* Font size for the links. Adjust as needed. */
+    font-weight: bold; /* Font weight (e.g., normal, bold, 300, 600). */
+    transition: color 0.3s ease; /* Smooth color transition on hover. */
+}
+
+nav a:hover {
+    color: #F5F5DC; /* Change color when hovered. Customize this. */
+}
+
+
+.welcome-section {
+    background-color: #c4c3c3;  /* Light gray background */
+    padding: 0.7rem 2rem;
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;
+    color: #11191f;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #11191f;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.form-section {
+    background-color: #11191f;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: -2rem;
+    margin-bottom: -5rem; /* This is controlling the space below the form */
+}
+
+
+.form-container {
+    max-width: 800px;
+    margin: -1.5rem auto 0;
+}
+
+.form-section input,
+.form-section textarea {
+    background-color: #1E2022 !important;
+    border: 1px solid #2C2F33 !important;
+    color: #F5F5DC !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: #F5F5DC !important;
+    box-shadow: none !important;
+}
+
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+    color: #808080 !important;
+}
+
+.contact-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9rem;  /* Matching your welcome section h2 size */
+    font-weight: 325;
+    color: #F5F5DC;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.form-section label {
+    color: #F5F5DC;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.form-section label > span,
+.form-section label::after {
+    color: #ff4444 !important;
+}
+
+nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo img {
+    height: 320px; /* Adjust this value to your preferred logo size */
+    width: auto;
+    display: block;
+    position: absolute; /* Add this */
+    top: -6.585rem; /* Adjust this value to position the logo vertically */
+    left: -3rem;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+}
+
+/* Move your existing nav a styles to target .nav-links a instead */
+.nav-links a {
+    text-decoration: none;
+    color: #11191f;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #F5F5DC;
+}
+
+/* Form grid styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .form-row.two-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-arrow a {
+    color: #F5F5DC;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-arrow a:hover {
+    color: #ffffff;
+    transform: translateY(5px);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

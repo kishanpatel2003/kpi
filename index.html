@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KP Investments</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/imgs/newlogo.png" alt="KP Investments Logo">
+            </div>
+            <div class="nav-links">
+
+                <a href="./buyers.html">Join Our Buyers Network</a>
+
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>KP Investments</h1>
+            <p>Hassle-Free Real Estate</p>
+            <div class="bubble-container">
+                <a href="#form-section" class="cta-bubble">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-arrow">
+            <a href="#welcome-section">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13l5 5 5-5"/>
+                    <path d="M7 6l5 5 5-5"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <section class="welcome-section">
+        <section id="welcome-section" class="welcome-section"></section>
+        <h2>Transform Your Property Journey</h2>
+        
+        <p class="intro">
+            As local New Jersey real estate investors, we specialize in creating win-win solutions for homeowners looking for a streamlined selling experience. Our process is refreshingly simple:
+        </p>
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <h3>Professional, Transparent Process</h3>
+                <p>No endless home showings or months of uncertainty. We offer a clear path forward with direct communication throughout.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Flexible Timeline</h3>
+                <p>Whether you need to move in days, weeks, or months we adapt to your needs and circumstances.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Zero Extra Costs</h3>
+                <p>We handle all the details - from paperwork to closing costs. You receive the full offer amount, no deductions.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Ready to Discuss Your Property?</h3>
+            <p>Share some details below, and let's have a conversation about your goals.</p>
+        </div>
+    </section>
+    
+    <section id="form-section" class="form-section">
+        <div class="form-container">
+            <h3 class="contact-heading">Contact Us</h3>
+            <form id="contact-form" class="form-grid">
+                <!-- Name row -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="first-name">First Name <span>*</span></label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Your First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name <span>*</span></label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Your Last Name" required>
+                    </div>
+                </div>
+                
+                <!-- Contact row -->
+                <div class="form-row two-cols">
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span>*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                </div>
+                
+                <!-- Property address row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">Property Address</label>
+                        <input type="text" id="address" name="property_address" placeholder="Your Property Address">
+                    </div>
+                </div>
+                
+                <!-- Message row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" id="submit-button">Submit</button>
+                <div id="form-status" style="display: none; margin-top: 1rem;"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="container">
+        <small>© 2025 KP Investments Group LLC</small>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const formStatus = document.getElementById('form-status');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Sending your message...';
+            formStatus.style.color = 'blue';
+            
+            const formData = {
+    type: 'SELLER',  // Add this line
+    first_name: document.getElementById('first-name').value,
+    last_name: document.getElementById('last-name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    property_address: document.getElementById('address').value,
+    message: document.getElementById('message').value
+};
+            
+            try {
+                console.log('Sending data:', formData); // Debug log
+                
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxFONzAC_Upm1Jtl2wgKxZ5VYDTeeOwo0Gy4XuHVhxWDpj5GQbD5BQqgSxp_KwUnzkQgg/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'no-cors' // Important for Google Apps Script
+                });
+                
+                // Since we're using no-cors, we'll assume success if we get here
+                formStatus.textContent = 'Thank you! Your message has been submitted successfully. Expect to hear from us in the next 48 hours';
+                formStatus.style.color = 'green';
+                form.reset();
+                
+            } catch (error) {
+                console.error('Detailed error:', error);
+                formStatus.textContent = 'Sorry, there was an error submitting your form. Please try again. Error: ' + error.message;
+                formStatus.style.color = 'red';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
